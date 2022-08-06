@@ -1,6 +1,6 @@
 @font-face {
     font-family: Title;
-    src: url(../../assets/Cuba\ Regular.otf);
+    src: url(../../assets/ZAPPAT-Black.otf);
   }
 
 .container {
@@ -18,7 +18,8 @@
 }
 
 .title {
+    border: 1px solid black;
     position: inherit;
-    margin-left: 2%;
+    padding-left: 5%;
     font-family: Title;
 }

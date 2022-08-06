@@ -18,7 +18,9 @@ export const Card = ({ label, labelSize, labelColor, backgroundColor, height, wi
     className="container"
     onClick={onClick}
     >
-        <text className="title" style={{fontSize: labelSize, color: labelColor}}>{label}</text>
+      <svg height={height} width={width}>
+        <text x={width*0.05} y={height*0.05 + labelSize} className="title" style={{fontSize: labelSize, color: labelColor}}>{label}</text>
+      </svg>
     </div>
   );
 };

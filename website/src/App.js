@@ -1,23 +1,38 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import { ProgressBar } from './stories/ProgressBar';
+import { Card } from './stories/Card';
+
+import useWindowDimensions from './stories/assets/dimensions';
 
 function App() {
+
+  const { height, width } = useWindowDimensions();
+  const [step, setStep] = useState(1)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='background'>
+      <div className='cardContainer'>
+        {step === 1 && 
+        <Card width={width/1.5} height={height/1.5} backgroundColor="#ffffff" shadowColor='black' label="Skedda" labelSize={108}/>
+        }
+        {step === 2 && 
+        <Card width={width/1.5} height={height/1.5} backgroundColor="#ffffff" shadowColor='black' label="Skedda" labelSize={108}/>
+        }
+        {step === 3 && 
+        <Card width={width/1.5} height={height/1.5} backgroundColor="#ffffff" shadowColor='black' label="Skedda" labelSize={108}/>
+        }
+        {step === 4 && 
+        <Card width={width/1.5} height={height/1.5} backgroundColor="#ffffff" shadowColor='black' label="Skedda" labelSize={108}/>
+        }
+        {step === 5 && 
+        <Card width={width/1.5} height={height/1.5} backgroundColor="#ffffff" shadowColor='black' label="Skedda" labelSize={108}/>
+        }
+        {step === 6 && 
+        <Card width={width/1.5} height={height/1.5} backgroundColor="#ffffff" shadowColor='black' label="Skedda" labelSize={108}/>
+        }
+      </div>
+      <ProgressBar width='40' height="100%" color="#cbf3f0" steps={8} fontSize={16} stepColor="#2ec4b6"/>
     </div>
   );
 }

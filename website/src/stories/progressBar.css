@@ -1,0 +1,18 @@
+@font-face {
+    font-family: MetropolisMedium;
+    src: url(../../assets/Metropolis-Medium.otf);
+  }
+
+.stepCount {
+    font-family: MetropolisMedium;
+}
+
+.step {
+    transition: all 500ms;
+    filter: brightness(90%);
+}
+
+.currentStep {
+    transition: all 500ms;
+    filter: brightness(100%);
+}
