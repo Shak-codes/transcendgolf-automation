@@ -1,0 +1,24 @@
+@font-face {
+    font-family: Title;
+    src: url(../../assets/Cuba\ Regular.otf);
+  }
+
+.container {
+    transition: 1000ms
+}
+
+.container:hover {
+    transition: 500ms;
+    filter: brightness(90%);
+}
+
+.container:active {
+    transition: none;
+    filter: brightness(80%);
+}
+
+.title {
+    position: inherit;
+    margin-left: 2%;
+    font-family: Title;
+}
