@@ -9,13 +9,9 @@
 
 .container:hover {
     transition: 500ms;
-    filter: brightness(90%);
+    filter: brightness(95%);
 }
 
-.container:active {
-    transition: none;
-    filter: brightness(80%);
-}
 
 .title {
     border: 1px solid black;

@@ -11,3 +11,14 @@
 .cardContainer {
   padding-top: 4%;
 }
+
+.skeddabg {
+  scale: 0.5;
+  margin-top: -25%;
+  margin-left: 2%;
+  position: absolute;
+  height: 450px;
+  width: 500px;
+  background-image: url(./calendarhero.svg);
+  background-size: contain;
+}

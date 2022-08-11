@@ -14,7 +14,15 @@ function App() {
     <div className='background'>
       <div className='cardContainer'>
         {step === 1 && 
+        <>
         <Card width={width/1.5} height={height/1.5} backgroundColor="#ffffff" shadowColor='black' label="Skedda" labelSize={108}/>
+        <div className='skeddabg'></div>
+        <p>• User makes reservation using our Skedda application</p>
+        <p>• Skedda saves the data</p>
+        <p>- Month</p>
+        <p>- Day</p>
+        <p>- Time</p>
+        </>
         }
         {step === 2 && 
         <Card width={width/1.5} height={height/1.5} backgroundColor="#ffffff" shadowColor='black' label="Skedda" labelSize={108}/>
