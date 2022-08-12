@@ -3,11 +3,7 @@
     src: url(../../assets/Metropolis-Medium.otf);
   }
 
-.stepCount {
-    font-family: MetropolisMedium;
-}
-
-.step {
+.futNode {
     -webkit-transform: scale(0.7);
     -webkit-transform-origin: 50% 50%;
     -webkit-transition:.3s;
@@ -17,7 +13,17 @@
     transform-box: fill-box;
 }
 
-.currentStep {
+.prevNode {
+    -webkit-transform: scale(0.4);
+    -webkit-transform-origin: 50% 50%;
+    -webkit-transition:.3s;
+    transform: scale(0.4);
+    transform-origin: 50% 50%;
+    transition:.3s;
+    transform-box: fill-box;
+}
+
+.curNode {
     -webkit-transform: scale(1);
     -webkit-transform-origin: 50% 50%;
     -webkit-transition:.3s;
@@ -28,34 +34,23 @@
     transition-delay: 300ms;
 }
 
-.stepNoAnim {
-    -webkit-transform: scale(0.3), translateX(0px);
+.staticNode {
+    -webkit-transform: scale(0.5), translateX(0px);
     -webkit-transform-origin: 50% 50%;
     -webkit-transition:.3s;
     transform: scale(0.5);
     transform-origin: 50% 50%;
     transition:.3s;
     transform-box: fill-box;
+    transition-delay: 150ms;
 }
 
-.stepAnimation {
-    -webkit-transform: scale(0.3) translateY(30px);
+.movingNode {
+    -webkit-transform: scale(0.4) translateY(30px);
     -webkit-transform-origin: 50% 50%;
     -webkit-transition:.3s;
-    transform: scale(0.3) translateY(232px);
+    transform: scale(0.4) translateY(232px);
     transform-origin: 50% 50%;
     transition:.3s;
     transform-box: fill-box;
-}
-
-
-
-@keyframes floatdown {
-    0%{transform: translateY(0, 0)}
-    50%{transform: translateY(30px), scale(0.2)}
-    100%{transform: translateY(0, 0)}
-}
-
-.static {
-    animation: floatdown 6s infinite;
 }
