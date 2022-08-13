@@ -3,21 +3,12 @@
     src: url(../../assets/Metropolis-Medium.otf);
   }
 
-.futNode {
+.node {
+    opacity: 0.5;
     -webkit-transform: scale(0.7);
     -webkit-transform-origin: 50% 50%;
     -webkit-transition:.3s;
     transform: scale(0.7);
-    transform-origin: 50% 50%;
-    transition:.3s;
-    transform-box: fill-box;
-}
-
-.prevNode {
-    -webkit-transform: scale(0.4);
-    -webkit-transform-origin: 50% 50%;
-    -webkit-transition:.3s;
-    transform: scale(0.4);
     transform-origin: 50% 50%;
     transition:.3s;
     transform-box: fill-box;

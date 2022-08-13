@@ -1,27 +1,30 @@
-import React from 'react';
+import React from "react";
 
-import { ProgressBar } from './ProgressBar';
-
+import { ProgressBar } from "./ProgressBar";
 
 export default {
-    title: 'ProgressBar',
-    component: ProgressBar,
-    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-    argTypes: {  
-        color: { control: 'color' } ,
-        stepColor: { control: 'color' }
-    },
-  };
+  title: "ProgressBar",
+  component: ProgressBar,
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  argTypes: {
+    barColor: { control: "color" },
+    curNodeColor: { control: "color" },
+    nodeColor: { control: "color" },
+  },
+};
 
 const Template = (args) => <ProgressBar {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-    height: 500,
-    width: 20,
-    color: 'black',
-    steps: 5,
-    stepColor: 'aquamarine',
+  curNode: 1,
+  containerWidth: 5,
+  containerHeight: 500,
+  barWidth: 0.5,
+  barColor: "aquamarine",
+  nodes: 5,
+  nodeSize: 20,
+  curNodeColor: "aquamarine",
+  nodeColor: "aquamarine",
 };
-
