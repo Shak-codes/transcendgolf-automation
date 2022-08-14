@@ -1,24 +1,52 @@
+@font-face {
+  font-family: title;
+  src: url(../assets/Hansief.otf);
+}
+
+@font-face {
+  font-family: text;
+  src: url(../assets/Metropolis-Regular.otf);
+}
+
 .background {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-image: linear-gradient(to bottom right, #ff9f1c, #ffbf69);
+  align-items: center;
+  background-image: linear-gradient(to bottom right, #f86623, #ff9f1c );
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 
-.cardContainer {
-  padding-top: 4%;
+.skeddabg {
+  scale: 1.5;
+  width: 500px;
+  height: 450px;
+  background-image: url(./calendarhero.svg);
+  background-size: cover;
+  margin-left: 1vw;
 }
 
-.skeddabg {
-  scale: 0.5;
-  margin-top: -25%;
-  margin-left: 2%;
-  position: absolute;
-  height: 450px;
-  width: 500px;
-  background-image: url(./calendarhero.svg);
-  background-size: contain;
+.bar {
+  margin-right: -8vw;
+}
+
+.textContainer {
+}
+
+.title {
+  align-self: flex-start;
+  font-family: title;
+  font-size: x-large;
+  font-weight: 500;
+  color: whitesmoke;
+}
+
+.text {
+  white-space: pre-line;
+  color: whitesmoke;
+  font-family: text;
+  font-weight: 400;
+  margin-bottom: 20vh;
 }
