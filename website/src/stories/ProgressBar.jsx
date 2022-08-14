@@ -18,7 +18,10 @@ export const ProgressBar = ({
   ...props
 }) => {
   const [animate, setAnimate] = useState(false);
-  const stepValue = 80 / nodes;
+
+  const stepValue = useMemo(() => {
+    return 80 / nodes;
+  }, [nodes]);
 
   const radius = useMemo(() => {
     return nodeSize / 1.5;
@@ -31,13 +34,27 @@ export const ProgressBar = ({
     }
   };
 
+  const bar = useMemo(() => {
+    return [...Array(nodes)].map((element, index) => (
+      <line
+        style={{ strokeWidth: barWidth, stroke: barColor }}
+        className="bar"
+        x1={50}
+        y1={`${10 + stepValue * index + nodeSize / 2}%`}
+        x2={50}
+        y2={`${10 + stepValue * (index + 1) - nodeSize / 2}%`}
+        strokeLinecap="round"
+      ></line>
+    ));
+  }, [barColor, barWidth, nodeSize, nodes, stepValue]);
+
   const node = useMemo(() => {
     return [...Array(nodes + 1)].map((element, index) => (
       <circle
         className={index + 1 === curNode ? "curNode" : "node"}
         cx={50}
         cy={`${10 + stepValue * index}%`}
-        r={`${nodeSize}px`}
+        r={`${nodeSize}%`}
         fill={index + 1 === curNode ? `${curNodeColor}` : `${nodeColor}`}
       />
     ));
@@ -49,28 +66,20 @@ export const ProgressBar = ({
         className={!animate ? "staticNode" : "movingNode"}
         cx={50}
         cy={`${10 + stepValue * (curNode - 1)}%`}
-        r={`${radius}px`}
+        r={`${radius}%`}
         fill={curNodeColor}
       />
     );
   }, [animate, stepValue, curNode, radius, curNodeColor]);
 
-  const bar = useMemo(() => {
-    return [...Array(nodes)].map((element, index) => (
-      <line
-        style={{ strokeWidth: barWidth, stroke: barColor }}
-        className="bar"
-        x1={50}
-        y1={`${10 + stepValue * index + radius}%`}
-        x2={50}
-        y2={`${10 + stepValue * (index + 1) - radius}%`}
-        strokeLinecap="round"
-      ></line>
-    ));
-  }, [barColor, barWidth, nodes, radius, stepValue]);
-
   return (
-    <svg id="chart" width={100} height={containerHeight} onClick={updateNode}>
+    <svg
+      {...props}
+      id="chart"
+      width={100}
+      height={containerHeight}
+      onClick={updateNode}
+    >
       {bar}
       {nodeAnimation}
       {node}
@@ -96,8 +105,8 @@ ProgressBar.defaultProps = {
   containerHeight: 500,
   barWidth: 1,
   barColor: "aquamarine",
-  nodes: 5,
-  nodeSize: 20,
+  nodes: 4,
+  nodeSize: 8,
   futNodeColor: "aquamarine",
   nodeColor: "aquamarine",
 };

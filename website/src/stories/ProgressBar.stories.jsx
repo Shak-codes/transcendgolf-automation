@@ -23,8 +23,8 @@ Primary.args = {
   containerHeight: 500,
   barWidth: 0.5,
   barColor: "aquamarine",
-  nodes: 5,
-  nodeSize: 20,
+  nodes: 4,
+  nodeSize: 8,
   curNodeColor: "aquamarine",
   nodeColor: "aquamarine",
 };
